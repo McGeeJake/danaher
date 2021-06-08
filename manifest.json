@@ -1,0 +1,25 @@
+{
+	"$schema": "https://fmd.papirfly.com/schemas/app/manifest-v14.json",
+	"name": "src",
+	"author": "Papirfly",
+	"description": "src editor",
+	"projectLeads": "",
+	"tasks": [
+		{
+			"name": "placeholder",
+			"title": "Placeholder",
+			"description": "This is an empty template",
+			"url": "index.html",
+			"iconUrl": "res/icons/tpl1.jpg",
+			"type": "pdf",
+			"developers": "",
+			"developerNotes": ""
+		}
+	],
+	"imagePath": [
+		"res/images/**/*.*"
+	],
+	"fontPath": [
+		"res/fonts/**/*.*"
+	]
+}

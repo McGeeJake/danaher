@@ -1,0 +1,18 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "SAC: \"general\"",
+			"type": "chrome",
+			"request": "launch",
+			"url": "file://${workspaceFolder}/debug.html?app=src:placeholder&nodeid=&config=scriptapp.src.general",
+			"sourceMaps": true,
+			"webRoot": "${workspaceFolder}",
+			"skipFiles": [
+				"*.dll.js"
+			],
+			"smartStep": true
+		}
+	],
+	"startChromeOnOSX": "/Applications/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome --remote-debugging-port=9222"
+}

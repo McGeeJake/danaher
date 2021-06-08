@@ -1,0 +1,168 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "tsc watch",
+      "type": "typescript",
+      "tsconfig": "tsconfig.watch.json",
+      "option": "watch",
+      "problemMatcher": {
+        "base": "$tsc-watch",
+        "owner": "typescript",
+        "applyTo": "allDocuments"
+      },
+      "isBackground": true,
+      "presentation": {
+        "group": "builders",
+        "reveal": "never"
+      },
+      "runOptions": {
+        "runOn": "folderOpen"
+      }
+    },
+    {
+      "label": "Build application",
+      "group": "build",
+      "type": "npm",
+      "script": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "Open build directory",
+      "type": "shell",
+      "windows": {
+        "command": "start"
+      },
+      "osx": {
+        "command": "/usr/bin/open"
+      },
+      "args": [
+        "${workspaceFolder}/dist"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "Build manifest",
+      "group": "build",
+      "type": "npm",
+      "script": "build:manifest",
+      "problemMatcher": []
+    },
+    {
+      "label": "Create default tasks",
+      "type": "shell",
+      "group": "test",
+      "command": "yarn",
+      "args": [
+        "pf",
+        "upgrade",
+        "--create-tasks"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Update scripts in package.json",
+      "type": "shell",
+      "group": "test",
+      "command": "yarn",
+      "args": [
+        "pf",
+        "upgrade",
+        "--update-scripts"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Run eslint for project",
+      "type": "shell",
+      "command": "yarn eslint -c .eslintrc.js 'src/**/*.ts'",
+      "problemMatcher": [
+        "$eslint-stylish"
+      ]
+    },
+    {
+      "label": "Run eslint for project with fixes",
+      "type": "shell",
+      "command": "yarn eslint -c .eslintrc.js 'src/**/*.ts' --fix",
+      "problemMatcher": [
+        "$eslint-stylish"
+      ]
+    },
+    {
+      "label": "Start webserver (test)",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "type": "shell",
+      "command": "yarn",
+      "args": [
+        "dev:serve",
+        "test"
+      ],
+      "isBackground": true,
+      "problemMatcher": [
+        {
+          "base": "$ts-checker-webpack",
+          "background": {
+            "activeOnStart": true,
+            "beginsPattern": "Compiling",
+            "endsPattern": "Compiled successfully"
+          }
+        }
+      ]
+    },
+    {
+      "label": "Start webserver (prod)",
+      "group": "build",
+      "type": "shell",
+      "command": "yarn",
+      "args": [
+        "dev:serve",
+        "prod"
+      ],
+      "isBackground": true,
+      "problemMatcher": [
+        {
+          "base": "$ts-checker-webpack",
+          "background": {
+            "activeOnStart": true,
+            "beginsPattern": "Compiling",
+            "endsPattern": "Compiled successfully"
+          }
+        }
+      ]
+    },
+    {
+      "label": "Start webserver (test) with hot reload",
+      "group": "build",
+      "type": "shell",
+      "command": "yarn",
+      "args": [
+        "dev:serve",
+        "test",
+        "--enable-hmr"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "isBackground": true,
+      "problemMatcher": [
+        {
+          "base": "$ts-checker-webpack",
+          "background": {
+            "activeOnStart": true,
+            "beginsPattern": "Compiling",
+            "endsPattern": "Compiled successfully"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+node_modules
+dist
+dev
+coverage
+debug.html
+tsconfig.json
+libs
+status.json
+src/manifest.ts
+res/images/overlays/*
+pdflib.upr
+.DS_Store

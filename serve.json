@@ -1,0 +1,10 @@
+{
+    "test": {
+        "site": "https://danaher.papirfly.com/",
+        "apikey": "fad815b5-01ed-4cce-b9af-c124095eae4d"
+    },    
+    "prod": {
+        "site": "https://danaher.papirfly.com/",
+        "apikey": "fad815b5-01ed-4cce-b9af-c124095eae4d"
+    }
+}

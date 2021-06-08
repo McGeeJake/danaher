@@ -1,0 +1,30 @@
+{
+	"name": "@papirfly/danaher",
+	"version": "1.0.0",
+	"private": true,
+	"author": "Papirfly",
+	"license": "UNLICENSED",
+	"devDependencies": {
+		"@pfeditor/types": "^3.0",
+		"@pfeditor/webpack": "^3.0",
+		"@typescript-eslint/eslint-plugin": "^3.0.1",
+		"@typescript-eslint/parser": "^3.0.1",
+		"eslint": "^7.1.0"
+	},
+	"dependencies": {
+		"@pfeditor/editor": "^3.0",
+		"@pfeditor/server-api": "^3.0",
+		"@pfeditor/styles": "^3.0"
+	},
+	"scripts": {
+		"build": "yarn run init && yarn build:manifest && yarn build:status && yarn build:webpack && yarn build:copy-libs && yarn build:archive",
+		"build:webpack": "yarn pf build",
+		"build:status": "yarn pf status",
+		"build:manifest": "yarn pf manifest",
+		"build:archive": "yarn pf archive",
+		"build:copy-libs": "yarn pf copy --filetype js libs dist/app/libs",
+		"build:install-libs": "yarn pf install-library",
+		"dev:serve": "yarn run init && yarn pf start",
+		"init": "yarn pf init && yarn build:install-libs"
+	}
+}
